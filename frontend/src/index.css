@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-darkbg-body text-slate-100 antialiased font-sans;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Glassmorphism custom styles */
+.glass-panel {
+  background: rgba(19, 14, 41, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel-hover:hover {
+  transform: translateY(-2px);
+  background: rgba(23, 17, 50, 0.8);
+  border-color: rgba(168, 85, 247, 0.25);
+  box-shadow: 0 10px 30px -10px rgba(168, 85, 247, 0.15);
+}
+
+/* Gaps and scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #05020c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #231b42;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a855f7;
+}
+
+/* Gauge needle rotate keyframe */
+@keyframes spin-slow {
+  from {
+    transform: rotate(-90deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 1s ease-out forwards;
+}
